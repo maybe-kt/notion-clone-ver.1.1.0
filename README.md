@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Notion Clone
+This project is a simplified clone of Notion, built while following a code-along tutorial by @CodeWithAntonio. The aim of this project was to understand how to create a flexible, minimal note-taking app with features similar to Notion, using modern web technologies.
 
-## Getting Started
+## Features
+- Rich Text Editing: The clone allows users to create, edit, and style notes.
+- Page Navigation: Users can add and navigate between different pages, replicating the Notion experience.
+- Persistence: Data is stored locally, so you can continue where you left off.
 
-First, run the development server:
+## Technologies Used
+- Frontend: React.js (with hooks)
+- State Management: Context API
+- Styling: CSS
+– Persistence: LocalStorage
+- Setup Instructions
+
+To run the project locally, follow these steps:
+
+# 1. Clone the repository:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/your-username/notion-clone.git
+cd notion-clone
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# 2. Install dependencies:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+```
+# 3. Run the development server:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm start
+```
 
-## Learn More
+The application will be available at http://localhost:3000.
 
-To learn more about Next.js, take a look at the following resources:
+Project Structure
+The project directory structure is organized as follows:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+notion-clone/
+│
+├── public/                  # Public assets
+├── src/                     # Source code
+│   ├── components/          # Reusable components
+│   ├── context/             # Context for state management
+│   ├── styles/              # CSS files
+│   └── App.js               # Main application file
+│
+├── package.json             # Dependencies and scripts
+└── README.md                # Project documentation
+```
+## Credits
+This project was inspired by the YouTube tutorial created by [Code With Antonio](https://www.youtube.com/@codewithantonio). It was an excellent learning experience, showcasing how to build a modern web application with React.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+This project is open source and available under the MIT License. Feel free to contribute or use it for your own learning purposes.

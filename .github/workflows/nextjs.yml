@@ -78,6 +78,8 @@ jobs:
             EDGE_STORE_ACCESS_KEY: ${{ secrets.EDGE_STORE_ACCESS_KEY }}
             EDGE_STORE_SECRET_KEY: ${{ secrets.EDGE_STORE_SECRET_KEY }}
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
+      - name: Export Static Pages
+        run: npx next export
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

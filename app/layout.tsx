@@ -20,7 +20,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Jotion",
+  title: "SMotion",
   description: "The connected workspace where better, faster work happens.",
   icons: {
     icon: [
@@ -54,7 +54,7 @@ export default function RootLayout({
               defaultTheme="system"
               enableSystem
               disableTransitionOnChange
-              storageKey="jotion-theme"
+              storageKey="smotion-theme"
             >
               <Toaster position="bottom-center" />
               <ModalProvider />

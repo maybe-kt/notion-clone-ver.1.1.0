@@ -42,7 +42,7 @@ const DocumentsPage = () => {
                 className="hidden dark:block"
             />
             <h2 className="text-large font-medium">
-                Welcome to {user?.firstName}&apos;s Jotion.
+                Welcome to {user?.firstName}&apos;s SMotion.
             </h2>
             <Button onClick={onCreate}>
                 <PlusCircle className="h-4 w-4 mr-2" />

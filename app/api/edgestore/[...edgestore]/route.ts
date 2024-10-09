@@ -24,18 +24,3 @@ export { handler as GET, handler as POST };
  * This type is used to create the type-safe client for the frontend.
  */
 export type EdgeStoreRouter = typeof edgeStoreRouter;
-
-// This is used in files within the `app/` directory
-export async function generateStaticParams() {
-  const ids = await fetch('https://example.com/api/edgestore-ids').then(res => res.json());
-
-  return ids.map(id => ({
-    edgestore: id, // Replace 'edgestore' with the dynamic parameter name
-  }));
-}
-
-export default function EdgestorePage({ params }) {
-  const { edgestore } = params;
-
-  return <div>Content for {edgestore}</div>;
-}

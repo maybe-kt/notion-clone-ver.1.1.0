@@ -2,13 +2,14 @@
   "name": "notion-clone",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://sijana.github.io/notion-clone",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "predeploy" : "npm run build",
-    "deploy" : "gh-pages -b main -d build"
+    "deploy" : "gh-pages -d build"
   },
   "dependencies": {
     "@blocknote/core": "^0.15.9",

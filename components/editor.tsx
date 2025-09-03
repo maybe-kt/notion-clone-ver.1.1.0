@@ -17,9 +17,10 @@ const Editor = ({ onChange, initialContent, editable }: EditorProps) => {
   const { resolvedTheme } = useTheme();
 
   const handleUpload = async (file: File) => {
-    // TODO: 업로드 로직을 구현하거나 외부 스토리지 연동하세요
+    console.log("Uploading file:", file);
     return "https://example.com/dummy-uploaded-file.jpg";
   };
+
 
   const editor: BlockNoteEditor = useCreateBlockNote({
     initialContent: initialContent

@@ -1,3 +1,6 @@
+"use client";
+
+import { ClerkProvider } from "@clerk/nextjs";
 import { Toaster } from "sonner";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
@@ -32,9 +35,9 @@ export const metadata: Metadata = {
         media: "(prefers-color-scheme: dark)",
         url: "/queen_white.svg",
         href: "/queen_white.svg",
-      }
-    ]
-  }
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -43,10 +46,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <ConvexClientProvider>
+    <ClerkProvider>
+      <html lang="en" suppressHydrationWarning>
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        >
+          <ConvexClientProvider>
             <ThemeProvider
               attribute="class"
               defaultTheme="system"
@@ -58,8 +63,9 @@ export default function RootLayout({
               <ModalProvider />
               {children}
             </ThemeProvider>
-        </ConvexClientProvider>
-      </body>
-    </html>
+          </ConvexClientProvider>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

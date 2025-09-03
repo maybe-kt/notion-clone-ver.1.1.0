@@ -47,7 +47,6 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <ConvexClientProvider>
-          <EdgeStoreProvider>
             <ThemeProvider
               attribute="class"
               defaultTheme="system"
@@ -59,7 +58,6 @@ export default function RootLayout({
               <ModalProvider />
               {children}
             </ThemeProvider>
-          </EdgeStoreProvider>
         </ConvexClientProvider>
       </body>
     </html>

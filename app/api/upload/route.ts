@@ -1,25 +1,25 @@
-import { NextRequest, NextResponse } from 'next/server';
+// app/api/upload/route.ts
 
-export async function POST(req: NextRequest) {
+import { writeFile } from 'fs/promises';
+import { NextResponse } from 'next/server';
+import path from 'path';
+
+export async function POST(req: Request) {
   const formData = await req.formData();
-  const file = formData.get('file') as File;
+  const file: File | null = formData.get('file') as unknown as File;
 
   if (!file) {
-    return NextResponse.json({ error: 'No file uploaded' }, { status: 400 });
+    return NextResponse.json({ success: false, error: 'No file provided.' }, { status: 400 });
   }
 
-  // 파일 내용을 버퍼로 읽기
   const bytes = await file.arrayBuffer();
   const buffer = Buffer.from(bytes);
-
-  // 예: 파일명을 고유하게 지정 (중복 방지용)
   const fileName = `${Date.now()}-${file.name}`;
+  const uploadDir = path.join(process.cwd(), 'public', 'uploads');
 
-  // 실제 파일 저장 (예: public/uploads/)
-  const fs = require('fs');
-  const path = require('path');
-  const uploadPath = path.join(process.cwd(), 'public', 'uploads', fileName);
-  fs.writeFileSync(uploadPath, buffer);
+  await writeFile(path.join(uploadDir, fileName), buffer);
 
-  return NextResponse.json({ url: `/uploads/${fileName}` });
+  const fileUrl = `/uploads/${fileName}`;
+
+  return NextResponse.json({ success: true, url: fileUrl });
 }

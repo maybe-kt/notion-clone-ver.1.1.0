@@ -22,18 +22,13 @@ export const Cover = ({
     url, 
     preview
 }: CoverImageProps) => {
-    const { edgestore } = useEdgeStore();
     const params = useParams();
     const coverImage = useCoverImage();
     const removeCoverImage = useMutation(api.documents.removeCoverImage);
 
     const onRemove = async () => {
+        // TODO: 파일 삭제 로직 필요 시 여기에 작성
         
-        if (url) {
-            await edgestore.publicFiles.delete({
-                url: url
-            })
-        }
         removeCoverImage({
             id: params.documentId as Id<"documents">
         });

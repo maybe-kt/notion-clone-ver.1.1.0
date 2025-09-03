@@ -1,6 +1,6 @@
 "use client"
 
-import { cn } from "";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { Button } from "./ui/button";
 import { ImageIcon, X } from "lucide-react";

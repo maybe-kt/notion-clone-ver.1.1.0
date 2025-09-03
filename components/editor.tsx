@@ -15,14 +15,10 @@ interface EditorProps {
 
 const Editor = ({ onChange, initialContent, editable }: EditorProps) => {
   const { resolvedTheme } = useTheme();
-  const { edgestore } = useEdgeStore();
 
   const handleUpload = async (file: File) => {
-    const response = await edgestore.publicFiles.upload({
-      file,
-    });
-
-    return response.url;
+    // TODO: 업로드 로직을 구현하거나 외부 스토리지 연동하세요
+    return "https://example.com/dummy-uploaded-file.jpg";
   };
 
   const editor: BlockNoteEditor = useCreateBlockNote({
@@ -30,7 +26,6 @@ const Editor = ({ onChange, initialContent, editable }: EditorProps) => {
       ? (JSON.parse(initialContent) as PartialBlock[])
       : undefined,
     uploadFile: handleUpload,
-    
   });
 
   return (

@@ -19,7 +19,7 @@ export async function POST(req: Request) {
     const fileName = `${Date.now()}-${file.name}`;
 
     // 버킷 이름은 supabase 프로젝트에서 만든 스토리지 버킷 이름으로 교체하세요
-    const bucketName = 'maybe-kt's Project';
+    const bucketName = "maybe-kt's Project";
 
     const { data, error } = await supabase.storage
       .from(bucketName)
